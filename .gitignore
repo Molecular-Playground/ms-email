@@ -34,3 +34,7 @@ node_modules
 
 #OS files
 .DS_STORE
+
+#files with passwords in them
+config.json
+
