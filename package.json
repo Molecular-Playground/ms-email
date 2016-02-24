@@ -1,0 +1,19 @@
+{
+  "name": "ms-email",
+  "version": "0.0.1",
+  "description": "Microservice for sending email.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Molecular-Playground/ms-email.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Molecular-Playground/ms-email/issues"
+  },
+  "homepage": "https://github.com/Molecular-Playground/ms-email#readme"
+}
