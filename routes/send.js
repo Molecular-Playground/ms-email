@@ -12,17 +12,24 @@ var transporter = nodemailer.createTransport({
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
-    from: 'Molecular Playground ✔ <molecularplayground@gmail.com>', // sender address
-    to: 'akaplowitz@umass.edu', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world', // plaintext body
-    html: '<b>Hello world ✔</b>' // html body
+    from: 'Molecular Playground <molecularplayground@gmail.com>', // sender address
+    to: 'rwstanle@umass.edu', // list of receivers
+    subject: 'Welcome to Molecular Playground!', // Subject line
+    text: "Hi there!\nWe're so glad you've joined.  Follow the link below to verify your account.\nThanks!\nThe Molecular Playground Team", // plaintext body
+    html: "<p>Hi there!</p><p>We so glad you've joined. Follow the link below to verify your account.</p><p>Thanks!</p><p>The Molecular Playground Team</p>" // html body
 };
 
 
-// GET users listing
-router.get('/', function(req, res, next) {
- // mailOptions.to = req.body.email;
+// PUT: send the email!
+router.put('/', function(req, res, next) {
+  if (req.body.email) {
+    mailOptions.to = req.body.email;
+  }
+  if (req.body.link) {
+    mailOptions.text += "\n Your link: " + req.body.link;
+    mailOptions.html += "<p> Your link: " + req.body.link + "</p>";
+  }
+  console.log(req.body);
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {

@@ -10,7 +10,6 @@ var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use('/send', send);
 
 // catch 404 and forward to error handler
