@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Molecular-Playground/ms-email/issues"
   },
-  "homepage": "https://github.com/Molecular-Playground/ms-email#readme"
+  "homepage": "https://github.com/Molecular-Playground/ms-email#readme",
+  "dependencies": {
+    "nodemailer": "^2.2.1"
+  }
 }
