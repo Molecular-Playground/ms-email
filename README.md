@@ -14,7 +14,17 @@ docker build -t email .
 docker run -d --name email -p 3000:3000 email
 ```
 
-This will run your container 'detached'. To kill the container, type in ```docker kill email```.
+This will run your container 'detached'. Here are some useful commands to interact with a detached container:
+```
+# kill a container
+docker kill email
+
+# view output
+docker logs -f email
+
+# restart a container
+docker restart -t=0 email
+```
 
 ### To Run (Development)
 The easiest way to develop using the docker container is to mount your working directory as a volume. From inside docker virtual machine, navigate to the top directory of this repository. Enter the following commands:
