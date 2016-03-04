@@ -3,7 +3,7 @@ A microservice for sending emails.
 
 All installation is done automatically through docker. If you do not have docker installed, install [here](https://docs.docker.com/engine/installation/).
 
-## Important Setup Instructions
+### Important Setup Instructions
 1. Copy `config.json.example` to a new file called `config.json`.
 2. Change the `gmailPassword` field to the correct password that you've been given.
 
