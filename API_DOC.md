@@ -15,7 +15,8 @@ Params (must be raw JSON in request.Body):
         "key": "validation_key_from_user_db_object"
         }
         
-Returns: "Message sent: `mailer_success_response_msg`" OR `false`
+Returns: "Message sent: `mailer_success_response_msg`" OR `false`.
+
 This is an unauthenticated endpoint.
 
 # /general
@@ -32,6 +33,6 @@ Params:
          "text": "plaintext_email_body_as_fallback"
         }
         
-Returns: Returns: "Message sent: `mailer_success_response_msg`" OR `false`
+Returns: "Message sent: `mailer_success_response_msg`" OR `false`.
 
 This is an unauthenticated endpoint.
