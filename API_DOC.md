@@ -12,10 +12,10 @@ Params (must be raw JSON in request.Body):
        
        {
         "email": "email_of_user_to_validate",
-        "key": "validation_key_from_user_db_object"
+        "link": "full_url_with_validation_key_to_validate_user"
         }
         
-Returns: "Message sent: `mailer_success_response_msg`" OR `false`.
+Returns: "Message sent: `mailer_success_response_msg`" OR `descriptive_error_msg`.
 
 This is an unauthenticated endpoint.
 
@@ -33,6 +33,6 @@ Params (must be raw JSON in request.Body):
          "text": "plaintext_email_body_as_fallback"
         }
         
-Returns: "Message sent: `mailer_success_response_msg`" OR `false`.
+Returns: "Message sent: `mailer_success_response_msg`" OR `descriptive_error_msg`.
 
 This is an unauthenticated endpoint.

@@ -26,7 +26,7 @@ router.put('/validate', function(req, res, next) {
   mailOptions.html = "<p>Hi there!</p><p>We\'re so glad you've joined. Follow the link below to verify your account.</p><p>Thanks!</p><p>The Molecular Playground Team</p>";
   mailOptions.subject = 'Welcome to Molecular Playground!';
   if(!req.body.email ||  !req.body.link) {
-    res.send(false); //should be a proper error message. false ok for now
+    res.send("Please provide necessary parameters. Email address and full validation url required.");
     return;
   }
   mailOptions.to = req.body.email;
@@ -36,19 +36,17 @@ router.put('/validate', function(req, res, next) {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
-      res.send(false);
+      res.send("Internal mail sending error: " + error);
     } 
     else {
-      console.log('Message sent: ' + info.response);
-      res.send(true);
+      res.send('Message sent: ' + info.response);
     }
   });
 });
 
 router.put('/general', function(req, res, next) {
   if (!req.body.email || !req.body.subject || !req.body.text || !req.body.html) {
-    res.send(false); //change this to a proper error
+    res.send("Please provide necessary parameters. Email address, subject, html, and plaintext all required.");
     return;
   }
   mailOptions.to = req.body.email;
@@ -59,12 +57,10 @@ router.put('/general', function(req, res, next) {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      res.send(error);
-      console.log(error);
+      res.send("Internal mail sending error: " + error);
     } 
     else {
-      res.send(true);
-      console.log('Message sent: ' + info.response);
+      res.send('Message sent: ' + info.response);
     }
   });
 });
