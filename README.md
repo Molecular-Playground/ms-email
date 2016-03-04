@@ -30,7 +30,7 @@ docker restart -t=0 email
 The easiest way to develop using the docker container is to mount your working directory as a volume. From inside docker virtual machine, navigate to the top directory of this repository. Enter the following commands:
 ```
 docker build -t email .
-docker run --name email -p 3000:3000 -v $PWD:/src email
+docker run -i -t -p 3000:3000 -v $PWD:/src email apk add --update bash && bash
 # where $PWD is a variable to your current directory and may need changing if you are using a windows environment
 ```
 
