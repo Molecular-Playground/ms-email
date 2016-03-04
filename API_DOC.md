@@ -24,7 +24,7 @@ This is an unauthenticated endpoint.
 ### #PUT
 Sends an email to an address. Request params form the email.
 
-Params: 
+Params (must be raw JSON in request.Body): 
 
         {
          "email": "to_email_address",
