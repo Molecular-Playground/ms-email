@@ -37,7 +37,7 @@ router.put('/validate', function(req, res, next) {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       res.send("Internal mail sending error: " + error);
-    } 
+    }
     else {
       res.send('Message sent: ' + info.response);
     }
@@ -58,7 +58,7 @@ router.put('/general', function(req, res, next) {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       res.send("Internal mail sending error: " + error);
-    } 
+    }
     else {
       res.send('Message sent: ' + info.response);
     }

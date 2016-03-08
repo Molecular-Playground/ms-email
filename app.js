@@ -3,14 +3,15 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var send = require('./routes/send');
+var ms_email_public = require('./routes/ms-email-public');
 
 var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/', send);
+
+app.use('/', ms_email_public);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
