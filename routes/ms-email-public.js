@@ -36,7 +36,7 @@ router.put('/validate', function(req, res, next) {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function (error, info) {
     if(error){ next(error);return;}
-    res.send('Message sent: ' + info.response);
+    res.send('Message sent!');
   });
 });
 
