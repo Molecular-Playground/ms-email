@@ -20,7 +20,7 @@ GMAIL_PASSWORD=YOUR_VALUE_HERE
 
 To make sure everything works correctly, make sure you use the same values for each microservice you are using. This can be easily done by using the same molecular-playground.env file.
 
-### To Run (Production)
+### To Run Manually (Production)
 From inside docker virtual machine, navigate to the top directory of this repository and enter the following commands:
 ```
 docker build -t email .
@@ -39,7 +39,7 @@ docker logs -f email
 docker restart -t=0 email
 ```
 
-### To Run (Development)
+### To Run Manually (Development)
 The easiest way to develop using the docker container is to mount your working directory as a volume. From inside docker virtual machine, navigate to the top directory of this repository. Enter the following commands:
 ```
 docker build -t email .
